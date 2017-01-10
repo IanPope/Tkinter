@@ -24,6 +24,10 @@ def addtolist2(event):
 def clearlist(event):
     listbox1.delete(0, END) 
     
+def clearlist2():
+    listbox1.delete(0, END)
+    findsize()
+    
 def checkforduplicate():
     names = listbox1.get(0, END) 
     if entry1.get() in names:
@@ -35,6 +39,7 @@ def findsize():
     label1.config(text=listbox1.size())
     
 def openfileR():
+    clearlist2()
     f = open("Readme.txt", "r")
     for line in f:
         name = line[0:-1]
